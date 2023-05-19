@@ -10,7 +10,6 @@ import datetime
 
 import os
 
-
 from func_collection import get_file_from_gdrive
 
 st.set_page_config(page_title='受注内容/日')
@@ -23,7 +22,8 @@ pd.options.display.float_format = '{:.2f}'.format
 cwd = os.path.dirname(__file__)
 
 #**********************gdriveからエクセルファイルのダウンロード・df化
-data_list = ['--データを選択--', '北日本', '東日本', '中部', '関西', '中四国九州']
+# data_list = ['--データを選択--', '北日本', '東日本', '中部', '関西', '中四国九州', 'shop仙台']
+data_list = ['--データを選択--', '北日本', 'shop仙台']
 
 selected_data = st.selectbox(
     'データの選択',
@@ -34,10 +34,11 @@ if selected_data == '--データを選択--':
     st.stop()
 data_dict = {
     '北日本': 'kita79j',
-    '東日本': 'higashi79j',
-    '中部': 'chuubu79j',
-    '関西': 'kansai79j',
-    '中四国九州': 'chuushikoku79j'
+    # '東日本': 'higashi79j',
+    # '中部': 'chuubu79j',
+    # '関西': 'kansai79j',
+    # '中四国九州': 'chuushikoku79j',
+    'shop仙台': 'shopsendai79j'
 }
 
 #driveからファイル取得dataに保存
